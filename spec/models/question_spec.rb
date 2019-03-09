@@ -12,7 +12,7 @@ RSpec.describe Question, type: :model do
    end
   
   it "should respond to resolved" do
-     expect(question).to respond_to(:resolved)
+     expect(question).to respond_to(:resolved) 
    end
   
 end
