@@ -19,6 +19,7 @@
  group :development do
    # Use sqlite3 as the development database for Active Record
    gem 'sqlite3', '~> 1.3.6'
+   
  end
  
  # Use Puma as the app server
@@ -49,4 +50,4 @@
  
   gem 'bootstrap-sass'
   
- 
+ gem 'pry-rails', :group => :development
