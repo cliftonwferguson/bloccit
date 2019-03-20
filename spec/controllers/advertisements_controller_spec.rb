@@ -76,6 +76,6 @@ RSpec.describe AdvertisementsController, type: :controller do
       post :create, params: { advertisement: {title: RandomData.random_sentence, copy: RandomData.random_paragraph, price: 99}}
       expect(response).to redirect_to Advertisement.last
     end
-    
+     
   end
 end
