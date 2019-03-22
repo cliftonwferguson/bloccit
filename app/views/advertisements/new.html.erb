@@ -3,8 +3,8 @@
 <div class="row">
     <%= form_for @advertisement do |f| %>
       <div class="form_group">
-          <% f.label :title %>
-          <% f.text_field :title, calss: 'form-control', placeholder: "enter post title" %>
+          <%= f.label :title %>
+          <%= f.text_field :title, calss: 'form-control', placeholder: "enter post title" %>
       </div>
       
       <div class="form-group">
