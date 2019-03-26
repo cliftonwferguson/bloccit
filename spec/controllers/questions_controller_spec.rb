@@ -112,7 +112,7 @@ include RandomData
     
     describe "DELETE destory" do
       it "deletes the question" do
-        delete :destory, params: {id: my_question.id} 
+        delete :destroy, params: {id: my_question.id} 
         count = Question.where({id: my_question.id}).size
         expect(count).to eq 0
       end
