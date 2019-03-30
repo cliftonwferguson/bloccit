@@ -8,6 +8,8 @@
 
  require 'random_data'
 
+ Post.destroy_all
+ Comment.destroy_all
  
  50.times do
  
@@ -27,9 +29,29 @@
      body: RandomData.random_paragraph
    )
  end
+ 
+ 100.times do
+    Question.create!(
+     title: RandomData.random_sentence,
+     body: RandomData.random_paragraph,
+     resolved: false
+      )
+    end
+ 
+ 
  puts "#{Post.count}"
  Post.find_or_create_by(title: "Seeds Assignment Title", body: "Seeds Assignment Body")
  puts "#{Post.count}"
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+ 
+ 50.times do
+   Advertisements.create!(
+    title: RandomData.random_word,
+    copy: RandomData.random_paragraph,
+    price: rand(20..30)
+    )
+ end
+  
+  advertisements = Advertisements.all
