@@ -11,10 +11,18 @@
  Post.destroy_all
  Comment.destroy_all
  
+ 15.times do
+   Topic.create!(
+     name:         RandomData.random_sentence,
+     description:  RandomData.random_paragraph
+   )
+ end
+ topics = Topic.all
+  
  50.times do
  
    Post.create!(
- 
+     topic:  topics.sample,
      title:  RandomData.random_sentence,
      body:   RandomData.random_paragraph
    )
@@ -43,15 +51,16 @@
  Post.find_or_create_by(title: "Seeds Assignment Title", body: "Seeds Assignment Body")
  puts "#{Post.count}"
  puts "Seed finished"
+ puts "#{Topic.count} topics created"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
  
  50.times do
-   Advertisements.create!(
+   Advertisement.create!(
     title: RandomData.random_word,
     copy: RandomData.random_paragraph,
     price: rand(20..30)
     )
  end
   
-  advertisements = Advertisements.all
+  ## advertisements = Advertisements.all
