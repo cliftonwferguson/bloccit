@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
 
   resources :questions
-
+  resources :sponsored_posts
   resources :advertisements
   resources :topics do
   resources :posts, except: [:index]
