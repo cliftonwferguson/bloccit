@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe SponsoredPostsController, type: :controller do
+    
+    let(:my_topic) { Topic.create!(name:  RandomData.random_sentence, description: RandomData.random_paragraph) }
+ 
+    let(:my_post) { my_topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph) }
 
    describe "GET edit" do
      it "returns http success" do
