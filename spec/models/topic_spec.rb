@@ -8,7 +8,15 @@ RSpec.describe Topic, type: :model do
    ## it { is_expected.to have_many(:posts) }
    it "has many posts" do 
    expect(topic).to have_many(:posts)
+   
+  
    end
+   
+    it { should have_many(:posts) }
+   it { should validate_lenght_of(:name).is_at_least(5) }
+   it { should validate_length_of(:description).is_at_least(15) }
+   it {should validate_presence_of(:description) }
+   it {should validate_presence_of(:name) }
    
    describe "attributes" do
      it "has name, description, and public attributes" do
