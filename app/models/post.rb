@@ -10,3 +10,6 @@ class Post < ApplicationRecord
    validates :topic, presence: true
    validates :user, presence: true
 end
+ 
+ 
+ 
