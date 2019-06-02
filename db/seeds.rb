@@ -54,19 +54,9 @@
    )
  end
  
- 100.times do
-    Question.create!(
-     title: RandomData.random_sentence,
-     body: RandomData.random_paragraph,
-     resolved: false
-      )
-    end
+
     
-    user = User.first
-    user.update_attributes!(
-      email: 'clifton.ferguson7@gmail.com',
-      password: 'helloworld'
-     )
+   
  
    admin = User.create!(
    name:     'Admin User',
@@ -91,12 +81,6 @@
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
  
- 50.times do
-   Advertisement.create!(
-    title: RandomData.random_word,
-    copy: RandomData.random_paragraph,
-    price: rand(20..30)
-    )
- end
+
   
   ## advertisements = Advertisements.all
