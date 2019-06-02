@@ -3,6 +3,7 @@ class User < ApplicationRecord
    before_save { self.email = email.downcase if email.present? }
    before_save { self.name = name.split.map!{|name| name.capitalize}.join(" ") if name.present? }
    before_save { self.role ||= :member }
+   before_save { self.role ||= :moderator }
 
   validates :name, length: { minimum: 1, maximum: 100 }, presence: true
   validates :password, presence: true, length: { minimum: 6 }, if: "password_digest.nil?"
@@ -14,7 +15,7 @@ class User < ApplicationRecord
 
    has_secure_password
    
-   enum role: [:member, :admin]
+   enum role: [:member, :admin, :moderator]
    
    def format_name
      if name
