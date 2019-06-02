@@ -42,15 +42,7 @@
  end
  posts = Post.all
  
-  50.times do
- 
-   SponsoredPost.create!(
-    topic: topics.sample,
-    title: RandomData.random_sentence,
-    body:  RandomData.random_paragraph
-    )
-  end
-   ## sponsored_posts = Sponsored_post.all
+  
   
   
   
@@ -76,6 +68,19 @@
       password: 'helloworld'
      )
  
+    admin = User.create!(
+   name:     'Admin User',
+   email:    'admin@example.com',
+   password: 'helloworld',
+   role:     'admin'
+ )
+ 
+ 
+   member = User.create!(
+   name:     'Member User',
+   email:    'member@example.com',
+   password: 'helloworld'
+ )
  
  puts "#{Post.count}"
  Post.find_or_create_by(title: "Seeds Assignment Title", body: "Seeds Assignment Body")
