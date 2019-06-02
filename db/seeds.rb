@@ -68,7 +68,7 @@
       password: 'helloworld'
      )
  
-    admin = User.create!(
+   admin = User.create!(
    name:     'Admin User',
    email:    'admin@example.com',
    password: 'helloworld',
