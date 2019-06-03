@@ -42,14 +42,17 @@ RSpec.describe TopicsController, type: :controller do
     end
 
      describe "GET edit" do
-      it "returns http success" do
+      it "returns http redirect" do
         get :edit, params: { id: my_topic.id }
-        expect(response).to have_http_status(:success)
+        expect(response).to redirect_to(topics_path)
       end
+    
 
       it "renders the #edit view" do
+        puts "test, helloworld"
+        p my_topic.id
         get :edit, params: { id: my_topic.id }
-        expect(response).to render_template :edit
+        expect(response).to render_template (:edit)
       end
 
       it "assigns topic to be updated to @topic" do
