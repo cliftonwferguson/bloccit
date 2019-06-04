@@ -7,6 +7,7 @@ RSpec.describe Post, type: :model do
    let(:body) { RandomData.random_paragraph }
    
    it { is_expected.to have_many(:comments) }
+   it { is_expected.to have_many(:votes) }
    
   let(:topic) { Topic.create!(name: name, description: description) }
  
