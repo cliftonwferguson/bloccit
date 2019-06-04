@@ -48,7 +48,7 @@
   
  100.times do
    Comment.create!(
- 
+     user: users.sample,
      post: posts.sample,
      body: RandomData.random_paragraph
    )
@@ -71,6 +71,8 @@
    email:    'member@example.com',
    password: 'helloworld'
  )
+ 
+
  
  puts "#{Post.count}"
  Post.find_or_create_by(title: "Seeds Assignment Title", body: "Seeds Assignment Body")
