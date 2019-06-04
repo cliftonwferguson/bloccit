@@ -52,7 +52,7 @@ RSpec.describe TopicsController, type: :controller do
         puts "test, helloworld"
         p my_topic.id
         get :edit, params: { id: my_topic.id }
-        expect(response).to render_template (:edit)
+        expect(response).to render_template(:edit)
       end
 
       it "assigns topic to be updated to @topic" do
