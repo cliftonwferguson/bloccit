@@ -2,10 +2,15 @@ class TopicsController < ApplicationController
     
    before_action :require_sign_in, except: [:index, :show]
  
-   before_action :authorize_user, except: [:index, :show]
+   before_action :authorize_user, except: [:index, :show, :edit]
    
    before_action :moderator_user, only: [:edit, :update]
    
+    
+     def edit
+       
+        @topic = Topic.find(params[:id])
+     end
     
     
     def index
@@ -37,8 +42,9 @@ class TopicsController < ApplicationController
         
     
    def update
+     @topic = Topic.find(params[:id])
      @topic.assign_attributes(topic_params)
- 
+     
      if @topic.save
         flash[:notice] = "Topic was updated."
        redirect_to @topic
