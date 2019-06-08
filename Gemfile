@@ -54,3 +54,5 @@
   gem 'bcrypt'
   
  gem 'pry-rails', :group => :development
+ 
+  gem 'figaro', '1.0'
