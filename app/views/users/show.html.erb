@@ -21,8 +21,18 @@
  
  // #12
  <h2>Posts</h2>
+ <img src="<%= gravatar(current_user) %>" />
  <%= render @user.posts %>
  <%= does_user_have_post(current_user)%>,
  <h2>Comments</h2>
  <%= does_user_have_comments (current_user)%>
  <%= render @user.comments %>
+ 
+ <h3>Favorited posts</h3>
+ 
+ <ul>
+  <% @user.favorited_posts.each do |post| %>
+  <li><%= post.title %></li>
+  <% end %>
+ </ul>
+ 

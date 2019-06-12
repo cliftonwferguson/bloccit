@@ -30,7 +30,15 @@ class User < ApplicationRecord
    end
    
    def favorite_for(post)
-      favorites. where(post_id: post.id).first
+      favorites.where(post_id: post.id).first
+   end
+   
+   def favorited_posts
+      posts = []
+      favorites.where(user_id: id).each do |favorite|
+         posts << favorite.post
+      end
+      posts
    end
   
    def avatar_url(size)
