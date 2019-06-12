@@ -1,14 +1,18 @@
 module UsersHelper
-    def does_user_have_post (user_id) do
-       if current_user == post.user
-            return post
-       else
-            return "This user does not have any posts."
-        end 
+    def does_user_have_post (current_user)
+       if current_user.posts.length > 0
+           return current_user.posts
+       else 
+            return "{current_user.name} has not submitted any posts yet."
+       end 
     end 
     
+    def does_user_have_comments (current_user)
+       if current_user.comments.length > 0
+           return current_user.comments
+       else
+           return "{current_user.name} has not submitted any comments yet."
+       end
+    end
+    
 end
- ## we will query the database to get a list of all posts that belong to the user
-         # if the list of post is empty,
-           #show "This user has no post" => return to the view.
-           #else iterate all user post and render a link to each one.
