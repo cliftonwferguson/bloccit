@@ -22,6 +22,7 @@
  // #12
  <h2>Posts</h2>
  <%= render @user.posts %>
- 
+ <%= does_user_have_post(current_user)%>,
  <h2>Comments</h2>
+ <%= does_user_have_comments (current_user)%>
  <%= render @user.comments %>
